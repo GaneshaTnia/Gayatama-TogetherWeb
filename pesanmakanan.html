@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Together</title>
+    <style>
+        body {
+            font-family:inherit;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #FFA500;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .search-bar {
+            padding: 5px;
+            width: 300px;
+        }
+        .nav {
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+        .nav-item {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .card {
+            width: 200px;
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            background-color: #f0f0f0;
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+        .card p {
+            font-size: 12px;
+            color: #666;
+        }
+        .card button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+            }
+            .header {
+                background-color: #FFA500;
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+                color: #fff;
+            }
+            .search-bar {
+                flex-grow: 1;
+                margin: 0 20px;
+            }
+            .search-bar input {
+                width: 100%;
+                padding: 8px;
+                border: none;
+                border-radius: 4px;
+            }
+            .nav {
+                background-color: #f0f0f0;
+                padding: 10px 20px;
+            }
+            .nav a {
+                margin-right: 15px;
+                text-decoration: none;
+                color: #333;
+            }
+            .content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                padding: 20px;
+            }
+            .card {
+                width: calc(25% - 20px);
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                overflow: hidden;
+            }
+            .card-image {
+                height: 150px;
+                background-color: #e0e0e0;
+                overflow: hidden;
+            }
+            .card-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .card-content {
+                padding: 15px;
+            }
+            .card h3 {
+                margin: 0 0 10px 0;
+                font-size: 18px;
+            }
+            .card p {
+                margin: 0 0 15px 0;
+                font-size: 14px;
+                color: #666;
+            }
+            .card a {
+                display: inline-block;
+                padding: 8px 15px;
+                background-color: #333;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;
+            }
+            @media (max-width: 1024px) {
+                .card {
+                    width: calc(33.33% - 20px);
+                }
+            }
+            @media (max-width: 768px) {
+                .card {
+                    width: calc(50% - 20px);
+                }
+            }
+            @media (max-width: 480px) {
+                .card {
+                    width: 100%;
+                }
+                .header {
+                    flex-direction: column;
+                    align-items: stretch;
+                }
+                .search-bar {
+                    margin: 10px 0;
+                }
+            }
+            /* Footer Styles */
+.site-footer {
+    background-color: #FFA500;
+    color: #333;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+}
+
+.site-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.hashtags {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #fff;
+}
+
+.legal-info {
+    font-size: 14px;
+    margin-top: 15px;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.visit-us, .social-media, .email {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-left, .footer-right {
+        text-align: center;
+    }
+
+    .footer-right {
+        margin-top: 20px;
+    }
+}
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo">Together</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </header>
+        <nav class="nav">
+            <a href="#">Terdekat</a>
+            <a href="#">selalu sedia</a>
+            <a href="#">Termurah</a>
+        </nav>
+        <main class="content">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://media.istockphoto.com/id/1934499650/photo/assorted-malaysian-favorite-foods.webp?a=1&b=1&s=612x612&w=0&k=20&c=eocWmcUaf4o7F7cNkdGPVIGz1Gmcm7q73VrNDM4RzUc=" alt="Rumah Makan Sunda">
+                </div>
+                <div class="card-content">
+                    <h3>Rumah Makan Bu susi</h3>
+                    <p>Nasi makanan sunda<br>menggunakan Bumbuh Masam<br>Pusat Makanan Sunda</p>
+                    <a href="../GAYATAMA/Pesan.html">PESAN</a>
+                </div>
+            </div>
+            <!-- Repeat the card div 7 more times for a total of 8 cards -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1671048116127-6c9369284699?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Rk9PT0R8ZW58MHx8MHx8fDA%3D" alt="Rumah Makan Sunda">
+                </div>
+                <div class="card-content">
+                    <h3>Warteg Saddat</h3>
+                    <p>homemade dry with delicious taste<br>and nutritious complete <br>package at the lowest price</p>
+                    <a href="../GAYATAMA/Pesan.html">PESAN</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1613520422094-290a378bbc11?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rumah Makan Sunda">
+                </div>
+                <div class="card-content">
+                    <h3>Cathering Bunda Fira</h3>
+                    <p>homemade dry with delicious taste<br>and nutritious complete <br>package at the lowest price</p>
+                    <a href="../GAYATAMA/Pesan.html">PESAN</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1661830948845-1eb54cd9e1fd?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8SU5ET05FU0lBJTIwRk9PRHxlbnwwfHwwfHx8MA%3D%3D" alt="Rumah Makan Sunda">
+                </div>
+                <div class="card-content">
+                    <h3>Nasgor Bu Iqis</h3>
+                    <p>homemade dry with delicious taste<br>and nutritious complete <br>package at the lowest price</p>
+                    <a href="../GAYATAMA/Pesan.html">PESAN</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://plus.unsplash.com/premium_photo-1675865382576-bf317abd8a35?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8SU5ET05FU0lBJTIwRk9PRHxlbnwwfHwwfHx8MA%3D%3D" alt="Rumah Makan Sunda">
+                </div>
+                <div class="card-content">
+                    <h3>Catring Moms Bila</h3>
+                    <p>homemade dry with delicious taste<br>and nutritious complete <br>package at the lowest price</p>
+                    <a href="../GAYATAMA/Pesan.html">PESAN</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://media.istockphoto.com/id/1315655470/photo/indonesian-dishes.webp?a=1&b=1&s=612x612&w=0&k=20&c=2niiQ3PVM5rU0FZemHjJM5zefxe0ecLG8v_5aIwvlvQ=" alt="Rumah Makan Sunda">
+                </div>
+                <div class="card-content">
+                    <h3>Naspad Adi</h3>
+                    <p>homemade dry with delicious taste<br>and nutritious complete <br>package at the lowest price</p>
+                    <a href="../GAYATAMA/Pesan.html">PESAN</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://media.istockphoto.com/id/468140691/photo/feast-of-asian-food-dishes.webp?a=1&b=1&s=612x612&w=0&k=20&c=vyivunfplgDleg-_senvnmwsb8B2OBHuu0kUJTl1YNA=" alt="Rumah Makan Sunda">
+                </div>
+                <div class="card-content">
+                    <h3>ketring bunda nezi</h3>
+                    <p>homemade dry with delicious taste<br>and nutritious complete <br>package at the lowest price</p>
+                    <a href="../GAYATAMA/Pesan.html">PESAN</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://media.istockphoto.com/id/1019441380/photo/many-different-indonesian-food-dishes-various-indonesian-bali-food.webp?a=1&b=1&s=612x612&w=0&k=20&c=J9uqsGS8NDwGUX8YnA7WKchyWWgsPkH27bUMutwZsSU=" alt="Rumah Makan Sunda">
+                </div>
+                <div class="card-content">
+                    <h3>Catering Haji Haekal</h3>
+                    <p>homemade dry with delicious taste<br>and nutritious complete <br>package at the lowest price</p>
+                    <a href="../GAYATAMA/Pesan.html">PESAN</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://plus.unsplash.com/premium_photo-1675865382301-5b0dfcc8772d?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8SU5ET05FU0lBJTIwRk9PRHxlbnwwfHwwfHx8MA%3D%3D" alt="Rumah Makan Sunda">
+                </div>
+                <div class="card-content">
+                    <h3>Masakan bunda Muti</h3>
+                    <p>homemade dry with delicious taste<br>and nutritious complete <br>package at the lowest price</p>
+                    <a href="../GAYATAMA/Pesan.html">PESAN</a>
+                </div>
+            </div>
+            <!-- Add 6 more card divs with different images -->
+        </main>
+    </body>
+    </html>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2 class="site-name">Together.com</h2>
+                <p class="hashtags">#BerbagiBersama</p>
+                <p class="hashtags">#MenjadiLebihBaik</p>
+                <p class="legal-info">Kami telah memiliki izin Pengumpulan Uang dan Barang untuk Non Bencana di Kementerian Sosial Republik Indonesia</p>
+            </div>
+            <div class="footer-right">
+                <p class="visit-us">Kunjungi kami disini</p>
+                <p class="social-media">IG: @Togetherwithus</p>
+                <p class="email">EMAIL: Together125@gmail.co,</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

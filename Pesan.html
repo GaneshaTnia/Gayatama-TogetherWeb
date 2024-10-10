@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Makanan untuk Yayasan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://plus.unsplash.com/premium_photo-1663091371440-6250f1f422fd?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFja2dyb3VuZCUyMGRvbmF0aW9ufGVufDB8fDB8fHww');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #orderSummary {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        #orderSummary h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        #whatsappButton {
+            background-color: #25D366;
+            margin-top: 15px;
+        }
+        #whatsappButton:hover {
+            background-color: #128C7E;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="orderForm">
+            <h1>Pemesanan Makanan untuk Yayasan</h1>
+            <form id="foodOrderForm">
+                <label for="wilayah">Pilih Wilayah:</label>
+                <select id="wilayah" required>
+                    <option value="">Pilih wilayah...</option>
+                    <option value="jakarta">Jakarta</option>
+                    <option value="bandung">Bandung</option>
+                    <option value="surabaya">Surabaya</option>
+                </select>
+
+                <label for="yayasan">Pilih Yayasan:</label>
+                <select id="yayasan" required>
+                    <option value="">Pilih yayasan...</option>
+                </select>
+
+                <label for="makanan">Pilih Makanan:</label>
+                <select id="makanan" required>
+                    <option value="">Pilih makanan...</option>
+                </select>
+
+                <label for="jumlah">Jumlah Porsi:</label>
+                <input type="number" id="jumlah" min="1" value="1" required>
+
+                <button type="submit">Pesan</button>
+            </form>
+        </div>
+        <div id="orderSummary" style="display: none;"></div>
+    </div>
+
+    <script>
+        const wilayahSelect = document.getElementById('wilayah');
+        const yayasanSelect = document.getElementById('yayasan');
+        const makananSelect = document.getElementById('makanan');
+        const orderForm = document.getElementById('foodOrderForm');
+        const orderSummary = document.getElementById('orderSummary');
+        const orderFormContainer = document.getElementById('orderForm');
+
+        const yayasanData = {
+            jakarta: ['Yayasan Kasih Anak Jakarta', 'Panti Asuhan Vincentius Putra', 'Yayasan Sayap Ibu'],
+            bandung: ['Yayasan Bhakti Luhur', 'Panti Asuhan Muhammadiyah', 'Rumah Yatim Ar-Rahman'],
+            surabaya: ['Yayasan Nurul Hayat', 'Panti Asuhan Al-Ikhlas', 'Yayasan Genta']
+        };
+
+        const makananData = {
+            jakarta: ['Nasi Uduk', 'Soto Betawi', 'Kerak Telor'],
+            bandung: ['Nasi Timbel', 'Batagor', 'Surabi'],
+            surabaya: ['Rawon', 'Rujak Cingur', 'Lontong Balap']
+        };
+
+        wilayahSelect.addEventListener('change', updateYayasan);
+        wilayahSelect.addEventListener('change', updateMakanan);
+
+        function updateYayasan() {
+            const selectedWilayah = wilayahSelect.value;
+            yayasanSelect.innerHTML = '<option value="">Pilih yayasan...</option>';
+            if (selectedWilayah) {
+                yayasanData[selectedWilayah].forEach(yayasan => {
+                    const option = document.createElement('option');
+                    option.value = yayasan;
+                    option.textContent = yayasan;
+                    yayasanSelect.appendChild(option);
+                });
+            }
+        }
+
+        function updateMakanan() {
+            const selectedWilayah = wilayahSelect.value;
+            makananSelect.innerHTML = '<option value="">Pilih makanan...</option>';
+            if (selectedWilayah) {
+                makananData[selectedWilayah].forEach(makanan => {
+                    const option = document.createElement('option');
+                    option.value = makanan;
+                    option.textContent = makanan;
+                    makananSelect.appendChild(option);
+                });
+            }
+        }
+
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const wilayah = wilayahSelect.value;
+            const yayasan = yayasanSelect.value;
+            const makanan = makananSelect.value;
+            const jumlah = document.getElementById('jumlah').value;
+
+            if (wilayah && yayasan && makanan && jumlah) {
+                orderSummary.innerHTML = `
+                    <h3>Ringkasan Pesanan:</h3>
+                    <p><strong>Wilayah:</strong> ${wilayah}</p>
+                    <p><strong>Yayasan:</strong> ${yayasan}</p>
+                    <p><strong>Makanan:</strong> ${makanan}</p>
+                    <p><strong>Jumlah Porsi:</strong> ${jumlah}</p>
+                    <button id="whatsappButton">Lanjutkan ke WhatsApp</button>
+                `;
+                
+                orderFormContainer.style.display = 'none';
+                orderSummary.style.display = 'block';
+
+                document.getElementById('whatsappButton').addEventListener('click', function() {
+                    window.location.href = '../GAYATAMA/WA.html';
+                });
+            } else {
+                alert('Mohon lengkapi semua pilihan.');
+            }
+        });
+    </script>
+</body>
+</html>

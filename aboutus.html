@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Together - Share Kindness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff902f, #FFA07A);
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            font-family: inherit;
+        }
+
+        .navbar a {
+            margin-left: 1rem;
+            text-decoration: none;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ffa825;
+        
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: #4a90e2;
+        }
+
+        .mission {
+            margin-bottom: 1rem;
+        }
+
+        .story {
+            background-color: #f0f8ff;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .solutions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .solution-card {
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #90EE90, #2E8B57);
+            color: white;
+        }
+
+        .footer {
+            background-color: #2E8B57;
+            color: #fff;
+            padding: 2rem 5%;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-left, .footer-right {
+            flex: 1;
+        }
+
+        .site-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hashtags, .legal-info, .visit-us, .social-media, .email {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header> 
+        <div class="logo">Together</div>
+        <nav class="navbar">
+            <a href="../GAYATAMA/Home.html">HOME</a>
+            <a href="../GAYATAMA/Program.html">PROGRAM</a>
+            <a href="../GAYATAMA/aboutus.html">ABOUT US</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>We Want to Build with ease <span class="highlight">of share kindness</span></h1>
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p>Together's mission is to nourish communities and inspire generosity through innovative food donation. We strive to create a world where no one goes hungry, by connecting those who can give with those in need.</p>
+            </div>
+            <div class="what-we-do">
+                <h2>What Do We Do?</h2>
+                <p>We leverage technology to make food donation as easy as ordering food. Our platform allows individuals and businesses to donate food through local catering services, directly to those most in need. We believe in the power of shared food to build stronger, more connected communities.</p>
+            </div>
+            <div class="story">
+                <h2>Our Story</h2>
+                <p>Founded in 2024 in Surabaya, Together started with a simple idea: what if donating food was as easy as ordering food? Our founders saw an opportunity to use technology to bridge the gap between surplus food and hunger in society.</p>
+            </div>
+        </section>
+
+        <section class="solutions">
+            <h2>We continue to push the boundaries of<br>what is possible in food donation:</h2>
+            <div class="solution-card">
+                <h3>Smart Matching</h3>
+                <p>Our algorithms ensure donations get to the right recipients at the right time</p>
+            </div>
+            <div class="solution-card">
+                <h3>Transparent Impact:</h3>
+                <p>Donors can track their contributions and see the real impact of their generosity</p>
+            </div>
+            <div class="solution-card">
+                <h3>Quality Assurance</h3>
+                <p>We only partner with catering services that have been vetted to ensure the highest food quality</p>
+            </div>
+            <div class="solution-card">
+                <h3>Simplified Design</h3>
+                <p> Our website makes donating as easy as a few taps on your smartphone</p>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2 class="site-name">Together.com</h2>
+                <p class="hashtags">#BerbagiBersama</p>
+                <p class="hashtags">#MenjadiLebihBaik</p>
+                <p class="legal-info">Kami telah memiliki izin Pengumpulan Uang dan Barang untuk Non Bencana di Kementerian Sosial Republik Indonesia</p>
+            </div>
+            <div class="footer-right">
+                <p class="visit-us">Kunjungi kami disini</p>
+                <p class="social-media">IG: @Togetherwithus</p>
+                <p class="email">EMAIL: Together125@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
